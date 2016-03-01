@@ -14,4 +14,8 @@ This module gives you full control over price ranges of Magento layered navigati
 ## Manage product gift on product level
 Go to **System > Configuration > EasyMage > Price Filter**
 ![screenshot_1](https://cloud.githubusercontent.com/assets/12259690/13421804/47ff8c08-df99-11e5-956c-4656e71bdc08.png)
-When module disabled default Magento price ranges are used. You can create as many price ranges as you need. If there's no products in your custom price range it is not shown. Price subtraction allows you to remove 0.01 from highest price of each range.
+
+When module disabled default Magento price ranges are used.
+You can create as many price ranges as you need.
+If there's no products in your custom price range it is not shown.
+Price subtraction allows you to remove 0.01 from highest price of each range.
