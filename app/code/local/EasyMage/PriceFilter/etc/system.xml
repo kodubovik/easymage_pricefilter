@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--
+/**
+* EasyMage_PriceFilter
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Open Software License (OSL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/osl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@magentocommerce.com so you can be sent a copy immediately.
+*
+* Original code copyright (c) 2006-2016 X.commerce, Inc. (http://www.magento.com)
+*
+* @package    EasyMage_PriceFilter
+* @author     Konstantin Dubovik
+* @contact    kodubovik@gmail.com
+* @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*/
+-->
+<config>
+    <tabs>
+        <easymage_tab translate="label" module="easymage_pricefilter">
+            <label>EasyMage</label>
+            <sort_order>1</sort_order>
+        </easymage_tab>
+    </tabs>
+    <sections>
+        <pricefilter_options translate="label" module="easymage_pricefilter">
+            <label>Price Filter</label>
+            <tab>easymage_tab</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label comment">
+                    <label>General</label>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label comment">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <price_ranges translate="label comment" module="easymage_pricefilter">
+                            <label>Price Ranges</label>
+                            <comment>
+                                <![CDATA[Format: ([min1])-[max1];[min2]-[max2];...;[minN]-([maxN]) - min1 and maxN are optional.</br><strong>E.g. -100;100-200;200-500;500-</strong>]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-no-html-tags</validate>
+                            <backend_model>
+                                easymage_pricefilter/system_config_backend_priceranges
+                            </backend_model>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </price_ranges>
+                        <price_subtraction translate="label comment" module="easymage_pricefilter">
+                            <label>Subtract 0.01 from the highest value of each price range</label>
+                            <comment><![CDATA[Select Yes to keep Magento default behavior.]]>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </price_subtraction>
+                    </fields>
+                </general>
+            </groups>
+        </pricefilter_options>
+    </sections>
+</config>
